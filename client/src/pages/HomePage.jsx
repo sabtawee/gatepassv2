@@ -6,97 +6,66 @@ import axios from "axios";
 import { server } from "../api";
 
 export default function HomePage() {
-  const [datas, setData] = useState([]);
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = async () => {
-    const res = await axios.get(server.API_GET_STOCKLOGOUT);
-    setData(res.data);
-  };
-
   const jsPdfGenerator = async () => {
-    const doc = new jsPDF();
-    //autoTable(doc, { html: "#my-table" });
+    const doc = new jsPDF({
+      orientation: "landscape",
+    });
+    // autoTable(doc, { html: "#my-table" });
     // Or use javascript directly:
     autoTable(doc, {
       head: [
         [
-          {
-            content: "",
-          },
-          {
-            content: "",
-          },
-          {
-            content: "",
-          },
-          {
-            content: "",
-          },
-          {
-            content: "",
-          },
-          {
-            content: "",
-          },       
-          {
-            content: "Part NG Detail",
-          },
-          {
-            content: "",
-          },       
-          {
-            content: "",
-          },       
+          "Mater",
+          "Material Description",
+          "Qty",
+          "PC",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "Lot No.",
+          "Batch No",
+          "Return",
         ],
-        [
-          {
-            content: "No",
-          },
-          {
-            content: "Process code",
-          },
-          {
-            content: "Process Name",
-          },
-          {
-            content: "Operation name",
-          },
-          {
-            content: "NG Qty",
-          },
-          {
-            content: "Approved",
-          },
-          {
-            content: "Part Ng Name",
-          },
-          {
-            content: "Ng Qty",
-          },
-          {
-            content: "Approved",
-          },
-        ],
-        
       ],
       body: [
-        ["1", "11111", "2222222222222222222222222222", "33333333", "44", "55555555", "666666666666666", "77", "8888888"],
+        [
+          "Mater",
+          "Material Description",
+          "Qty",
+          "PC",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "Lot No.",
+          "Batch No",
+          "Return",
+        ],
         // datas.map(({ model, material_des, wos, qty, wos_out, type, emp }) => {
         //   return [model, material_des, wos, qty, wos_out, type, emp];
         // }),
       ],
-      styles: {overflow: 'linebreak',
-                fontSize: 6},
-      margin: {left: 2, right: 2, bottom: 0 },
-      theme: 'grid',
-      
+      startY: 50, // startY is basically margin-top
+      headStyles: {
+        fillColor: [241, 196, 15],
+        fontSize: 8,
+        halign: "center",
+      },
+      columnStyles: {
+        0: { cellWidth: 30, cellHeight: 20, halign: "center" },
+        1: { cellWidth: 40, halign: "center" },
+        2: { cellWidth: "auto", halign: "center", fontStyle: "bold" },
+        3: { cellWidth: 20, halign: "center" },
+        4: { cellWidth: 30, halign: "center" },
+      },
+      styles: {
+        valign: "middle",
+      },
     });
-
-    doc.save("table.pdf");
+    doc.save(`pdf.pdf`);
   };
 
   return (
