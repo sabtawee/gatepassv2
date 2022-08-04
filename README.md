@@ -2,14 +2,14 @@
 ## Vite-React-Gatepass
 ```
 > INSTALL BACKEND FOLLOW <br>
-> cd backend <br>
-> npm install <br>
-> npm start <br>
-> backend running at port 3121 <br>
+> cd backend 
+> npm install 
+> npm start 
+> backend running at port 3121 
 ```
 ```
 > INSTALL FONTEND FOLLOW <br>
-> cd client <br>
-> npm install <br>
-> npm run dev <br>
+> cd client 
+> npm install 
+> npm run dev 
 ```
