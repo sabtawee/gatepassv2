@@ -13,3 +13,11 @@
 > npm install 
 > npm run dev 
 ```
+
+```
+> FUNCTION COMPLETE
+> Input new item
+> Run Numbering
+> Login Emp
+> Show Result
+```

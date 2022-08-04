@@ -58,7 +58,8 @@ export default function LoginPage(props) {
                     type="text"
                     className="form-control"
                     placeholder="EMP No."
-                    onChange={(e) => setEmpno(e.target.value)}
+                    value={empno}
+                    onChange={(e) => setEmpno(e.target.value.toUpperCase())}
                     onKeyPress={Login}
                     autoFocus
                   />

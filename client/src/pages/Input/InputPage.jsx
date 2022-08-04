@@ -290,7 +290,7 @@ export default function InputPage() {
                       type="text"
                       onChange={(e) => setItemsearch(e.target.value)}
                       className="form-control"
-                      onKeyPress={SearchByitem}
+                      onKeyUp={SearchByitem}
                     />
                   </div>
                 </div>

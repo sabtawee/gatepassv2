@@ -41,7 +41,7 @@ export default function SidebarComponent() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/logstock" className="nav-link">
+                <Link to="/result" className="nav-link">
                   <i className="nav-icon fas fa-drafting-compass text-blue" />
                   <p>RESULT</p>
                 </Link>

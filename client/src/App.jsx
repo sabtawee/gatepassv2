@@ -5,6 +5,7 @@ import SidebarComponent from "./components/SidebarComponent";
 import FooterComponent from "./components/FooterComponent";
 import LoginPage from "./pages/Login/LoginPage";
 import InputPage from "./pages/Input/InputPage";
+import ResultPage from "./pages/Result/ResultPage";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage url="/home" />} />
             <Route path="/input" element={<InputPage />} />
+            <Route path="/result" element={<ResultPage />} />
           </Routes>
         </div>
       </div>
